@@ -1,0 +1,84 @@
+---
+title: "TBN,TBM"
+author: "yuriel"
+date: '2022-03-30'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+Nayarit 
+
+
+Poblacion media es la misma poblacion del año 2020 dado que no hay otro año con que comparar
+Poblacion 2020: 128,900,000
+
+
+Nacimientos 11167
+Muertes 8532
+Inmigracion 252605
+Emigracion 244381
+
+TBN_2020= 11167/128900000
+        = 8.663305e-05
+
+TBM_2020= 8532/128900000
+        = 6.619085e-05
+
+TBI_2020= 252605/128900000
+        = 0.001959697
+
+TBE_2020= 244381/128900000
+        = 0.001895896
+
+x<-3
+y<-4
+fab<-function(x,y)(return(sqrt(x^2+y^2)))
+                   fab
+                   pob <- 333322132
+                   nacimiento
+                   
+                   tbn <- nacimiento/pob
+                   
+              entidades <- c("ags","edomex","chiapas")
+              tbn <- c(0.1455421,0.00015,0.11515)
+              tbm <- c(0.1554,0.0114585,0.00005416)
+              tbi <- c(0.00114455,0.154548,0.0111455)
+              tbe <- c(0.0000145,0.15454,0.015545)
+              base<- data.frame(entidades,tbn,tbm,tbi,tbe)
+              base1 <- data.frame(entidades,base[,2:5]*100)
+              
+  ######### Proporcion de sexos al nacimiento
+              
+  La porporcion de sexo al nacimiento se defin de la siguiente manera:
+    PSN: nac_hom / nac_muj
+   
+    PSN_mx= 828944 / 800264
+          = 1.035838 y al multiplicarla por 100 
+    PSN:mx= 103 en Méxio nacen 103 niños por cada 100 niños
+    
+    
+    ####### Proporcion de niños y niñas por mujer ########
+    
+    PNM = Pob_<5años / pobfem
+Pob_<5años =    2827377    
+pobfem-15-44  = 23855033  
+PNM = 2827377/23855033 =0.1185233 y al multiplicar por 100
+PNM= 11 niños por cada 100 mujeres en México
+
+
+################### Tasa de dependencia ################
+La tasa de dependencia se relaciona a las personas que tienen
+mas posibilidades de ser dependientes
+
+TD = (pob_65ymas) / (pob_15-64)
+
