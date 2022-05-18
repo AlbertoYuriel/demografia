@@ -1,0 +1,102 @@
+---
+title: '20042022'
+author: "Yuriel"
+date: '2022-04-20'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+#-En la demografia existen 2 conceptos que es necesario diferenciar
+#-Fecundidad se refiere al numero de hijos que tienen las mujeres
+#-Fertilidad se refiere a la capacidad biologica de la mujer de tener hijos
+
+  #Fecundidad que impactan en la fecundidad de las mujeres:
+    #*Econompia    *Cultura
+    #*Edo civil    *Familia
+    #*Fisiologicas *Morbilidad
+    #*Educación    *Acceso a Anticonceptivo
+# Tasa Bruta de Natalidad
+
+#  TBN= Nacimiento / Población
+
+# Normalmente esta TBN se utiliza de manera anual y se interpreta en miles de 
+# personas
+
+################## EJEMPLO ####################
+ Nacimientos = 470900
+ Poblacion  = 27720000
+ TBN = 470900/27720000
+     = 0.01698773
+# Por lo tanto La TBN tambien se puede interpretar multiplicandola
+# por 1000, es decir, que en esta poblacion nace 17 niños por cada 1000 personas
+ 
+ ###### Fecundidad
+ # ¿Cuantos hijos puede tener una mujer durante su periodo fertil? 
+ #- Suponemos que inicia a los 15 y termina a los 45 años
+ #1.- 45-15= 30 años de fertilidad
+ #2.- 30 años por 12 meses =360 meses
+ #3.- 360 / 9 meses = 40 embarazos en una vida fertil de 30 años
+
+## Tasa Especifica de Fecundidad se define de la siguiente manera:
+ # TEF= Nacimiento^{i} / Pob. Femenina^{i}
+ ##### Ejemplo #####
+  Edad  Nacidos Poblacion   TEF(por mil)
+        Vivos   Femenina
+15-19  14687    2974000   0.004938467*1000 =4.938467
+20-24  116809   3404000     34.31522
+25-29  307767   3688000     83.45092
+30-34  308795   4286000     72.04736
+35-39  209707   4776000     43.9085
+40-44  31270    4243000     7.369786
+
+
+### Tasa General de Fecundidad
+
+    TGF= (44-Σ_i=15)Nacimientos^{i}/ (44-Σ_i=15)Poblacion femenina^{i}
+    
+    Ejemplo 
+    
+    TGF= 1070035 / 23371 = 0.04578
+    
+    #45.78 nacimientos por cada mil mujeres de edad de 15 a 44 años
+    
+## Ejercicio ###
+    Calcular la TEF y TGF para México en el año 2010
+    
+ Edad  Nacidos Poblacion   TEF(por mil)
+        Vivos   Femenina
+15-19  464102    5505991   84.29037
+20-24  748723   5079067   147.4135
+25-29  624181   4582202   136.2186
+30-34  418695   4444767    94.19954  
+35-39  205503   4328249    47.47948
+40-44  49430    3658904    13.50951 
+
+  TGF= 2510634 / 27599180 = 0.0909677 * 1000
+  TGF = 90.9677
+
+
+
+summary(cars)
+```
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
