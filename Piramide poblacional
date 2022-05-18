@@ -1,0 +1,71 @@
+---
+title: "Piramide poblacional"
+author: "Yuriel"
+date: '2022-04-06'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+install.packages("pyramid") 
+require (pyramid)
+hombres <- c(60,50,40,30,25,20,15,10)
+names (hombres) <- c('0-9','10-19','20-29','30-39','40-49','50-59','60-69','70y+')
+mujeres <-c(80,70,50,30,28,23,18,10) #poblacion mujeres
+
+require(dplyr)
+ags <- ags %>% #Recordar que %>% es un mutate 
+  as_tibble() %>% #Funcion
+  mutate (gpoeda = case_when
+        (EDAD >= 0  & EDAD <= 4   ~ 1,
+         EDAD >= 5  & EDAD <= 9   ~ 2,
+         EDAD >= 10 & EDAD <= 14  ~ 3,
+         EDAD >= 15 & EDAD <= 19  ~ 4,
+         EDAD >= 20 & EDAD <= 24  ~ 5,
+         EDAD >= 25 & EDAD <= 130 ~ 6,
+         EDAD == 999 ~ 7)) 
+table (ags$gpoeda)
+install.packages("questionr")
+require(questionr)
+ wtd.table (ags$SEXO, weights = ags$FACTOR)
+ wtd.table (ags$SEXO, weights = ags$FACTOR)
+ table (ags)
+ 
+ 
+#grafica de piramide
+pyramids(Left=hombres, Llab="hombres", Right=mujeres,Rlab="Mujeres", Clab = "Grupo de edad", Laxis=c(0,50,100), Csize = 1, main="Grafica 1. ejemplo de piramide poblacional clase de demografia",Lcol="black",Rcol="dark red")
+
+ags <-read.csv(file.choose()) #es para extraer un excel de la ventana principal
+
+conyu = 1 unido
+        2 alguna vez unido
+        3 nunca unido 
+        
+
+
+
+
+
+
+
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
