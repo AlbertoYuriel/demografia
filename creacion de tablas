@@ -1,0 +1,18 @@
+install.packages("dplyr")
+require ("dplyr")
+mundo <- as_tibble(read.csv(file.choose()))
+##read.csv es para abir cualquier base de datos
+#tibble anida funciones
+#para crear una base de datos mas pequeña
+
+                           # %>% pipe es para anidar
+#primer filtro
+can<- mundo %>%            #buscando en base de datos de nombre "mundo"
+  as_tibble() %>%          #anida funciones
+   filter(iso_code=="CAN") %>% #realiza un filtro en la variable iso_code
+                           #Donde busque el nombre CAN
+mutate(acumulado =cumsum(new_cases))%>% #cumsum suma acumulada ya viene por defecto en R
+filter(between(acumulado, 1000,3000))
+                            #para total de casos
+max(can$new_cases)          #indica que busque el total de casos por covid
+                            # de los nuevos casos
