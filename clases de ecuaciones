@@ -1,0 +1,36 @@
+install.packages("dplyr")
+require(dplyr)
+library(knitr)
+library(rmarkdown)
+install.packages("readr")
+require(readr)
+library(readr)
+install.packages("questionr")
+require(questionr)
+---
+  title: "18/05"
+author: "yuriel"
+date: '2022-05-18'
+output: html_document
+
+```{r cars}
+#Tasa bruta de mortalidad
+#Esperanza de Vida sea Mayor
+#-Pensiones
+#-Gtos de Salud
+#-Presión hacia PEA-{Ocupado y desocupados)
+#PEA: poblacion economicamente activa
+#Muerte: Desaparicion de toda evidencia de vida en cualquier tiempo
+#despues de que una persona haya nacido viva
+
+
+
+#Tasa especifica de mortalidad
+
+
+summary(cars)
+```
+######
+Tasa Bruta de Mortalidad
+$$TBM_T->t+n=\frac{M}{P}
+
